@@ -23,6 +23,7 @@ namespace WebStor_GeekBrains
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -32,17 +33,29 @@ namespace WebStor_GeekBrains
             {
                 app.UseDeveloperExceptionPage();
             }
-            var hellowstring = _configuration["CustomHelloWorld"];
-            //var hellowstring = _configuration["Logging:LogLevel:Default"];
+            var hellostring = _configuration["CustomHelloWorld"];
+            //var hellostring = _configuration["Logging:LogLevel:Default"];
 
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync(hellowstring);
-                });
+                // endpoints.MapDefaultControllerRoute(); // краткий аналог
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                // ћаршрут по умолчанию состоит из трЄх частей разделЄнных У/Ф
+                // ѕервой частью указываетс€ им€ контроллера,
+                // второй - им€ действи€ (метода) в контроллере,
+                // третей - опциональный параметр с именем УidФ
+                // ≈сли часть не указана - используютс€ значени€ по умолчанию:
+                // дл€ контроллера им€ УHomeФ,
+                // дл€ действи€ - УIndexФ
+
+                //endpoints.MapGet("/", async context =>
+                //{
+                //    await context.Response.WriteAsync(hellostring);
+                //});
             });
         }
     }
