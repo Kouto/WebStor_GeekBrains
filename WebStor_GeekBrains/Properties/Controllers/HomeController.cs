@@ -31,6 +31,16 @@ namespace WebStor_GeekBrains.Properties.Controllers
                 Age = 35,
                 Position = "Программист",
                 Married = true
+            },
+            new EmployeeViewModel
+            {
+                Id = 3,
+                FirstName = "Мария",
+                SurName = "Александровна",
+                Patronymic = "Кирьеченко",
+                Age = 38,
+                Position = "Менеджер",
+                Married = true
             }
         };
 
