@@ -13,5 +13,7 @@ namespace WebStor_GeekBrains.ViewModels
         public string Patronymic { get; set; }
         public int Age { get; set; }
         public string Position { get; set; }
+        public bool Married { get; set; }
+
     }
 }

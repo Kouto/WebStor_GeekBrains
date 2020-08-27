@@ -19,7 +19,8 @@ namespace WebStor_GeekBrains.Properties.Controllers
                 SurName = "Иванов",
                 Patronymic = "Иванович",
                 Age = 22,
-                Position = "Начальник"
+                Position = "Начальник",
+                Married = false
             },
             new EmployeeViewModel
             {
@@ -28,7 +29,8 @@ namespace WebStor_GeekBrains.Properties.Controllers
                 SurName = "Петров",
                 Patronymic = "Иванович",
                 Age = 35,
-                Position = "Программист"
+                Position = "Программист",
+                Married = true
             }
         };
 

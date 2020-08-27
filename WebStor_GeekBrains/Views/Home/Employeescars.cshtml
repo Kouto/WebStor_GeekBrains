@@ -34,32 +34,42 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BrandName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Model)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Color)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EngineCapacity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.YearOfIssue)
-            </td>
-            <td>
-                @Html.ActionLink("Добавить", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Подробно", "EmployeesCarsDetails", new { id=item.Id}) |
-                @Html.ActionLink("Удалить", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BrandName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Model)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Color)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EngineCapacity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.YearOfIssue)
+                </td>
+                <td>
+                    @Html.ActionLink("Добавить", "Edit", new { /* id=item.PrimaryKey */ })
+                    @Html.ActionLink("Подробно", "EmployeesCarsDetails", new { id = item.Id })
+                    @Html.ActionLink("Удалить", "Delete", new { /* id=item.PrimaryKey */ })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+<thead>
+    <tr>
+        <td>
+            @Html.ActionLink("Главная страница", "index", new { })
+        </td>
+    </tr>
+</thead>
+
